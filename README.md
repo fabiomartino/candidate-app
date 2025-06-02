@@ -32,61 +32,53 @@ The application allows uploading candidate data along with an Excel file, proces
 
 ## 🏗 Project Structure
 
-```text
 /candidate-app
-  /frontend-angular  --> Angular 20 frontend app
-  /backend-nestjs    --> NestJS backend API
-  README.md          --> Project documentation
-```
+/frontend-angular    –> Angular 20 frontend app
+/backend-nestjs      –> NestJS backend API
+README.md            –> Project documentation
+package.json         –> Monorepo scripts
 
-⸻
+---
 
-🔥 How to Run the Project
+## 🚀 How to Run the Project
 
-1️⃣ Clone the repo
+### 1️⃣ Clone the repo
 
 ```sh
 git clone https://github.com/fabiomartino/candidate-app.git
 cd candidate-app
-```
+
+2️⃣ Install dependencies (mono install)
+
+yarn run install-all
+
+3️⃣ Run Backend
+
+yarn run start-backend
+# → http://localhost:3000
+
+4️⃣ Run Frontend
+
+yarn run start-frontend
+# → http://localhost:4200
+
 
 ⸻
 
-2️⃣ Install dependencies
+🎮 Available Scripts (Monorepo)
 
-Frontend
+In the project root you can run:
 
-```sh
-cd frontend-angular
-yarn install
-```
+Command	Description
+yarn run install-all	Installs both frontend + backend
+yarn run start-backend	Runs NestJS backend
+yarn run start-frontend	Runs Angular frontend
+yarn run test-backend	Runs backend unit tests (Jest)
+yarn run test-backend:e2e	Runs backend e2e tests (Jest)
+yarn run test-frontend	Runs frontend tests (Karma)
+yarn run build-backend	Builds backend app
+yarn run build-frontend	Builds frontend app
 
-Backend
-
-```sh
-cd ../backend-nestjs
-yarn install
-```
-
-⸻
-
-3️⃣ Running the apps
-
-Backend
-
-cd backend-nestjs
-yarn start:dev
-
-Default URL: http://localhost:3000
-
-⸻
-
-Frontend
-
-cd ../frontend-angular
-yarn start
-
-Default URL: http://localhost:4200
 
 ⸻
 
@@ -94,7 +86,6 @@ Default URL: http://localhost:4200
 
 Frontend
 
-```text
 ✅ Upload Candidate Form (Reactive)
 ✅ Upload Excel file (.xls, .xlsx)
 ✅ Display list of loaded candidates (Material Table)
@@ -102,38 +93,32 @@ Frontend
 ✅ Clear Candidates (confirmation dialog)
 ✅ Signals-based Store
 ✅ Responsive UI
-```
-
-⸻
 
 Backend
 
-```text
 ✅ REST API with NestJS
 ✅ POST /candidates/upload endpoint
 ✅ Processes Excel file and returns candidate object
 ✅ Basic validation and error handling
 ✅ Unit and e2e tests with Jest
-```
+
 
 ⸻
 
 🔄 API Documentation
 
 POST /candidates/upload
-
-Content-Type: multipart/form-data
+	•	Content-Type: multipart/form-data
 
 Request fields:
 
 Field	Type	Required
 name	string	Yes
 surname	string	Yes
-excel	file	Yes      (.xls or .xlsx)
+excel	file	Yes (.xls or .xlsx)
 
 Example Response:
 
-```json
 {
   "name": "John",
   "surname": "Doe",
@@ -141,7 +126,7 @@ Example Response:
   "years": 3,
   "availability": true
 }
-```
+
 
 ⸻
 
@@ -149,39 +134,32 @@ Example Response:
 
 Backend (NestJS)
 
-```sh
-cd backend-nestjs
-yarn test
-yarn test:e2e
-```
-
-⸻
+yarn run test-backend
+yarn run test-backend:e2e
 
 Frontend (Angular)
 
-```sh
-cd frontend-angular
-yarn test
-```
+yarn run test-frontend
+
 
 ⸻
 
 ✨ Additional Notes
--	The app uses Angular Signals and a signal-based Store for managing frontend state.
--	Excel parsing on the backend uses xlsx library.
--	No DB used — the state is persisted in LocalStorage (per requirement).
--	The API is stateless and simple — ready to be extended with DB or authentication if needed.
--	The solution aims to follow modern best practices and clean architecture.
+	•	The app uses Angular Signals and a signal-based Store for managing frontend state.
+	•	Excel parsing on the backend uses xlsx library.
+	•	No DB used — the state is persisted in LocalStorage (per requirement).
+	•	The API is stateless and simple — ready to be extended with DB or authentication if needed.
+	•	The solution aims to follow modern best practices and clean architecture.
 
 ⸻
 
 📚 Possible Improvements
--	Add pagination to table
--	Add filtering & sorting
--	Support batch uploads (multi-row Excel)
--	Add user authentication
--	Integrate with a database (MongoDB / PostgreSQL)
--	Add advanced validation on backend (class-validator)
+	•	Add pagination to table
+	•	Add filtering & sorting
+	•	Support batch uploads (multi-row Excel)
+	•	Add user authentication
+	•	Integrate with a database (MongoDB / PostgreSQL)
+	•	Add advanced validation on backend (class-validator)
 
 ⸻
 
@@ -195,6 +173,7 @@ This project demonstrates:
 ✅ Solid testing (backend + frontend)
 ✅ Clean code and architecture
 
+
 ⸻
 
-Developed by Fabio Martino - 2025
+Developed by Fabio Martino — 2025 🚀
