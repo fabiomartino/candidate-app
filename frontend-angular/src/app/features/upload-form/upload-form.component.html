@@ -1,0 +1,48 @@
+<form [formGroup]="candidateForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" required />
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Surname</mat-label>
+      <input matInput formControlName="surname" required />
+    </mat-form-field>
+  
+    <div class="file-input-wrapper">
+        <input
+            type="file"
+            id="excel"
+            hidden
+            accept=".xlsx,.xls"
+            (change)="onFileChange($event)"
+            #fileInput />
+
+            <button
+                mat-raised-button
+                color="accent"
+                type="button"
+                (click)="fileInput.click()">
+                <mat-icon>upload_file</mat-icon>
+                Upload Excel
+            </button>
+      
+        <div class="file-name" *ngIf="candidateForm.value.excel">
+          Selected file: {{ candidateForm.value.excel?.name }}
+        </div>
+      </div>
+  
+    <button mat-raised-button color="primary" type="submit" [disabled]="!isFormValid">
+      Submit
+    </button>
+  
+    <button mat-button color="warn" type="button" (click)="onClearCandidates()">
+      Clear Candidates
+    </button>
+
+    <!-- <button mat-stroked-button type="button" color="accent" (click)="loadMockCandidates()">
+        Load demo data
+    </button> -->
+  </form>
+  
+  <app-candidates-table />
