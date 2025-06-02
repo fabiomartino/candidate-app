@@ -37,7 +37,7 @@ The application allows uploading candidate data along with an Excel file, proces
   /frontend-angular  --> Angular 20 frontend app
   /backend-nestjs    --> NestJS backend API
   README.md          --> Project documentation
-
+```
 
 ⸻
 
@@ -45,9 +45,10 @@ The application allows uploading candidate data along with an Excel file, proces
 
 1️⃣ Clone the repo
 
+```sh
 git clone https://github.com/fabiomartino/candidate-app.git
 cd candidate-app
-
+```
 
 ⸻
 
@@ -55,14 +56,17 @@ cd candidate-app
 
 Frontend
 
+```sh
 cd frontend-angular
 yarn install
+```
 
 Backend
 
+```sh
 cd ../backend-nestjs
 yarn install
-
+```
 
 ⸻
 
@@ -90,6 +94,7 @@ Default URL: http://localhost:4200
 
 Frontend
 
+```text
 ✅ Upload Candidate Form (Reactive)
 ✅ Upload Excel file (.xls, .xlsx)
 ✅ Display list of loaded candidates (Material Table)
@@ -97,16 +102,19 @@ Frontend
 ✅ Clear Candidates (confirmation dialog)
 ✅ Signals-based Store
 ✅ Responsive UI
+```
 
 ⸻
 
 Backend
 
+```text
 ✅ REST API with NestJS
 ✅ POST /candidates/upload endpoint
 ✅ Processes Excel file and returns candidate object
 ✅ Basic validation and error handling
 ✅ Unit and e2e tests with Jest
+```
 
 ⸻
 
@@ -125,6 +133,7 @@ excel	file	Yes      (.xls or .xlsx)
 
 Example Response:
 
+```json
 {
   "name": "John",
   "surname": "Doe",
@@ -132,7 +141,7 @@ Example Response:
   "years": 3,
   "availability": true
 }
-
+```
 
 ⸻
 
@@ -140,37 +149,39 @@ Example Response:
 
 Backend (NestJS)
 
+```sh
 cd backend-nestjs
 yarn test
 yarn test:e2e
-
+```
 
 ⸻
 
 Frontend (Angular)
 
+```sh
 cd frontend-angular
 yarn test
-
+```
 
 ⸻
 
 ✨ Additional Notes
-	•	The app uses Angular Signals and a signal-based Store for managing frontend state.
-	•	Excel parsing on the backend uses xlsx library.
-	•	No DB used — the state is persisted in LocalStorage (per requirement).
-	•	The API is stateless and simple — ready to be extended with DB or authentication if needed.
-	•	The solution aims to follow modern best practices and clean architecture.
+-	The app uses Angular Signals and a signal-based Store for managing frontend state.
+-	Excel parsing on the backend uses xlsx library.
+-	No DB used — the state is persisted in LocalStorage (per requirement).
+-	The API is stateless and simple — ready to be extended with DB or authentication if needed.
+-	The solution aims to follow modern best practices and clean architecture.
 
 ⸻
 
 📚 Possible Improvements
-	•	Add pagination to table
-	•	Add filtering & sorting
-	•	Support batch uploads (multi-row Excel)
-	•	Add user authentication
-	•	Integrate with a database (MongoDB / PostgreSQL)
-	•	Add advanced validation on backend (class-validator)
+-	Add pagination to table
+-	Add filtering & sorting
+-	Support batch uploads (multi-row Excel)
+-	Add user authentication
+-	Integrate with a database (MongoDB / PostgreSQL)
+-	Add advanced validation on backend (class-validator)
 
 ⸻
 
